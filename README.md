@@ -33,10 +33,14 @@ Dataset yang digunakan adalah **Bike Sharing Dataset** dari:
 Laboratory of Artificial Intelligence and Decision Support (LIAAD), University of Porto  
 INESC Porto, Portugal
 
+Diunduh dari [Kaggle](https://www.kaggle.com/datasets/lakshmi25npathi/bike-sharing-dataset)
+
 Dataset terdiri dari dua file utama:
 
 - `hour.csv` — data penyewaan sepeda yang diagregasi berdasarkan jam, dengan **17.379 records**
 - `day.csv` — data penyewaan sepeda yang diagregasi berdasarkan hari, dengan **731 records**
+
+
 
 ### Variabel Dataset
 
