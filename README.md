@@ -150,6 +150,8 @@ Peningkatan rata-rata:
 
 **327,22 penyewaan atau sekitar 205,46%.**
 
+![Perbandingan Rata-rata Peminjaman Sepeda Tahun 2012](visualisasi\pertanyaan1.png)
+
 ### 💡 Insight
 
 Rata-rata penyewaan sepeda pada jam rush hour jauh lebih tinggi dibandingkan jam lainnya pada hari kerja tahun 2012.
@@ -168,6 +170,8 @@ Analisis kedua dilakukan untuk membandingkan rata-rata jumlah penyewaan berdasar
 | Berawan | 212,99 |
 | Badai Ringan | 142,37 |
 | Badai Berat | 93,50 |
+
+![Rata-rata Peminjaman Sepeda Berdasarkan Kondisi Cuaca Tahun 2012](visualisasi\pertanyaan2.png)
 
 ### 💡 Insight
 
@@ -195,6 +199,8 @@ Selisih rata-rata:
 Persentase penurunan pada hari libur:
 
 **18,17%.**
+
+![Perbandingan Rata-rata Penyewaan Sepeda: Hari Libur vs Hari Biasa (Jam 06.00-21.00)](visualisasi\pertanyaan3.png)
 
 ### 💡 Insight
 
@@ -493,7 +499,7 @@ Hasil analisis data divisualisasikan menggunakan **Streamlit** dan dapat digunak
 
 **Dashboard dapat diakses melalui:**
 
-[Streamlit Cloud](https://anlssdt-dcdng-ivan.streamlit.app/)
+[Streamlit Cloud](https://anlss-dt-bkshrng-ivan.streamlit.app/)
 
 ---
 
