@@ -12,7 +12,6 @@
 - [🖥️ Dashboard](#%EF%B8%8F-dashboard)
 - [⚙️ Instalasi dan Menjalankan Dashboard](#%EF%B8%8F-instalasi-dan-menjalankan-dashboard)
 - [🛠️ Tools & Technologies](#%EF%B8%8F-tools--technologies)
-- [👤 Author](#-author)
 
 # 📌 Deskripsi Proyek
 
@@ -562,11 +561,3 @@ Setelah dijalankan, dashboard dapat diakses melalui alamat yang ditampilkan oleh
 - **Anaconda**
 
 ---
-
-# 👤 Author
-
-**Muhammad Ivan Aldorino**
-
-Teknik Informatika — Universitas Negeri Semarang
-
-Interest: **Data Science • Data Analytics • Computer Vision**
