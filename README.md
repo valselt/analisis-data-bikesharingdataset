@@ -1,19 +1,28 @@
 # Dashboard Analisis Data Penyewaan Sepeda 🚲
 
-# 📌 Daftar Isi
+## 📌 Daftar Isi
 - [📌 Deskripsi Proyek](#-deskripsi-proyek)
 - [🎯 Pertanyaan Bisnis](#-pertanyaan-bisnis)
 - [📊 Dataset](#-dataset)
 - [🛢 Data Wrangling](#-data-wrangling)
 - [📈 Exploratory Data Analysis](#-exploratory-data-analysis)
+  - [1. Analisis Rush Hour pada Hari Kerja Tahun 2012](#1-analisis-rush-hour-pada-hari-kerja-tahun-2012)
+  - [2. Analisis Pengaruh Kondisi Cuaca Tahun 2012](#2-analisis-pengaruh-kondisi-cuaca-tahun-2012)
+  - [3. Analisis Hari Libur dan Hari Biasa](#3-analisis-hari-libur-dan-hari-biasa)
 - [🔍 Analisis Lanjutan](#-analisis-lanjutan)
+  - [1. Rata-rata Penyewaan Berdasarkan Hari](#1-rata-rata-penyewaan-berdasarkan-hari)
+  - [2. Rata-rata Penyewaan Berdasarkan Jam](#2-rata-rata-penyewaan-berdasarkan-jam)
+  - [3. Hubungan Feels-Like Temperature dengan Penyewaan](#3-hubungan-feels-like-temperature-dengan-penyewaan)
+  - [4. Hubungan Kelembapan dengan Penyewaan](#4-hubungan-kelembapan-dengan-penyewaan)
+  - [5. Hubungan Kecepatan Angin dengan Penyewaan](#5-hubungan-kecepatan-angin-dengan-penyewaan)
+  - [6. Perbandingan Pengguna Casual dan Registered Berdasarkan Hari Kerja](#6-perbandingan-pengguna-casual-dan-registered-berdasarkan-hari-kerja)
 - [📌 Kesimpulan](#-kesimpulan)
 - [💡 Rekomendasi Action Item](#-rekomendasi-action-item)
 - [🖥️ Dashboard](#%EF%B8%8F-dashboard)
 - [⚙️ Instalasi dan Menjalankan Dashboard](#%EF%B8%8F-instalasi-dan-menjalankan-dashboard)
 - [🛠️ Tools & Technologies](#%EF%B8%8F-tools--technologies)
 
-# 📌 Deskripsi Proyek
+## 📌 Deskripsi Proyek
 
 Proyek ini merupakan analisis data terhadap **Bike Sharing Dataset**, yaitu dataset yang berisi informasi mengenai jumlah penyewaan sepeda berdasarkan waktu, kondisi cuaca, hari kerja, hari libur, serta karakteristik pengguna.
 
@@ -23,22 +32,22 @@ Hasil analisis kemudian divisualisasikan dalam bentuk **dashboard interaktif men
 
 ---
 
-# 🎯 Pertanyaan Bisnis
+## 🎯 Pertanyaan Bisnis
 
 Analisis ini dilakukan untuk menjawab beberapa pertanyaan bisnis berikut:
 
 ### Pertanyaan 1
-**Berapa besar persentase peningkatan rata-rata jumlah peminjaman sepeda (`cnt`) pada jam sibuk/rush hour pagi (07.00–09.00) dan sore (16.00–18.00) dibandingkan jam-jam lainnya pada hari kerja (`workingday = 1`) sepanjang tahun 2012?**
+**Berapa besar persentase peningkatan rata-rata jumlah penyewaan sepeda (`cnt`) pada jam sibuk/rush hour pagi (07.00–09.00) dan sore (16.00–18.00) dibandingkan jam-jam lainnya pada hari kerja (`workingday = 1`) sepanjang tahun 2012?**
 
 ### Pertanyaan 2
-**Kondisi cuaca mana (`weathersit`: Level 1 Cerah, Level 2 Berawan, atau Level 3/4 Badai) yang menghasilkan rata-rata jumlah peminjaman sepeda (`cnt`) harian tertinggi sepanjang tahun 2012?**
+**Kondisi cuaca mana (`weathersit`: Level 1 Cerah, Level 2 Berawan, atau Level 3/4 Badai) yang menghasilkan rata-rata jumlah penyewaan sepeda (`cnt`) harian tertinggi sepanjang tahun 2012?**
 
 ### Pertanyaan 3
 **Berapa selisih rata-rata jumlah penyewaan sepeda (`cnt`) antara hari libur (`holiday`) dan hari biasa pada rentang jam 06.00–21.00 sepanjang tahun 2011 dan 2012?**
 
 ---
 
-# 📊 Dataset
+## 📊 Dataset
 
 Dataset yang digunakan adalah **Bike Sharing Dataset** dari:
 
@@ -55,7 +64,7 @@ Dataset terdiri dari dua file utama:
 
 
 
-## Variabel Dataset
+### Variabel Dataset
 
 | Kolom | Deskripsi |
 |---|---|
@@ -77,7 +86,7 @@ Dataset terdiri dari dua file utama:
 | `registered` | Jumlah pengguna registered |
 | `cnt` | Total penyewaan sepeda |
 
-## Kategori Cuaca
+### Kategori Cuaca
 
 `weathersit` terdiri dari:
 
@@ -86,7 +95,7 @@ Dataset terdiri dari dua file utama:
 - **Level 3 — Badai Ringan:** Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
 - **Level 4 — Badai Berat:** Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog
 
-## 📚 Dataset Reference
+### 📚 Dataset Reference
 
 Dataset ini dikembangkan oleh **Hadi Fanaee-T dan Joao Gama**.
 
@@ -96,16 +105,16 @@ Dataset ini dikembangkan oleh **Hadi Fanaee-T dan Joao Gama**.
 
 
 ---
-# 🛢 Data Wrangling
+## 🛢 Data Wrangling
 
-## 🔎 Data Assessment
+### 🔎 Data Assessment
 
 Dataset terdiri dari dua DataFrame:
 
 - `day_df` → berasal dari `day.csv`
 - `hour_df` → berasal dari `hour.csv`
 
-### `day_df`
+#### `day_df`
 
 - 731 records
 - 16 kolom
@@ -114,7 +123,7 @@ Dataset terdiri dari dua DataFrame:
 - Tidak ditemukan inaccurate value
 - Kolom `dteday` masih bertipe `object` dan perlu dikonversi menjadi `datetime`
 
-### `hour_df`
+#### `hour_df`
 
 - 17.379 records
 - 17 kolom
@@ -125,7 +134,7 @@ Dataset terdiri dari dua DataFrame:
 
 ---
 
-## 🧹 Data Cleaning
+### 🧹 Data Cleaning
 
 Tahapan data cleaning yang dilakukan meliputi:
 
@@ -141,9 +150,9 @@ cnt = casual + registered
 
 ---
 
-# 📈 Exploratory Data Analysis
+## 📈 Exploratory Data Analysis
 
-## 1. Analisis Rush Hour pada Hari Kerja Tahun 2012
+### 1. Analisis Rush Hour pada Hari Kerja Tahun 2012
 
 Analisis pertama dilakukan menggunakan `hour_df` dengan memfilter:
 
@@ -163,9 +172,9 @@ Peningkatan rata-rata:
 
 **327,22 penyewaan atau sekitar 205,46%.**
 
-![Perbandingan Rata-rata Peminjaman Sepeda Tahun 2012](visualisasi/pertanyaan1.png)
+![Perbandingan Rata-rata Penyewaan Sepeda Tahun 2012](visualisasi/pertanyaan1.png)
 
-### 💡 Insight
+#### 💡 Insight
 
 Rata-rata penyewaan sepeda pada jam rush hour jauh lebih tinggi dibandingkan jam lainnya pada hari kerja tahun 2012.
 
@@ -173,7 +182,7 @@ Hal ini menunjukkan adanya **lonjakan permintaan yang sangat signifikan pada per
 
 ---
 
-## 2. Analisis Pengaruh Kondisi Cuaca Tahun 2012
+### 2. Analisis Pengaruh Kondisi Cuaca Tahun 2012
 
 Analisis kedua dilakukan untuk membandingkan rata-rata jumlah penyewaan berdasarkan kondisi cuaca pada tahun 2012.
 
@@ -184,9 +193,9 @@ Analisis kedua dilakukan untuk membandingkan rata-rata jumlah penyewaan berdasar
 | Badai Ringan | 142,37 |
 | Badai Berat | 93,50 |
 
-![Rata-rata Peminjaman Sepeda Berdasarkan Kondisi Cuaca Tahun 2012](visualisasi/pertanyaan2.png)
+![Rata-rata Penyewaan Sepeda Berdasarkan Kondisi Cuaca Tahun 2012](visualisasi/pertanyaan2.png)
 
-### 💡 Insight
+#### 💡 Insight
 
 Kondisi **cuaca cerah menghasilkan rata-rata penyewaan sepeda tertinggi**, yaitu sebesar **253,66 penyewaan**.
 
@@ -196,7 +205,7 @@ Hal ini menunjukkan bahwa **kondisi cuaca merupakan salah satu faktor yang berka
 
 ---
 
-## 3. Analisis Hari Libur dan Hari Biasa
+### 3. Analisis Hari Libur dan Hari Biasa
 
 Analisis ketiga dilakukan pada rentang waktu **06.00–21.00** sepanjang tahun 2011 dan 2012.
 
@@ -213,9 +222,9 @@ Persentase penurunan pada hari libur:
 
 **18,17%.**
 
-![Perbandingan Rata-rata Penyewaan Sepeda: Hari Libur vs Hari Biasa (Jam 06.00-21.00)](visualisasi/pertanyaan3.png)
+![Rata-rata Penyewaan Sepeda: Hari Libur vs Hari Biasa (Jam 06.00-21.00)](visualisasi/pertanyaan3.png)
 
-### 💡 Insight
+#### 💡 Insight
 
 Rata-rata penyewaan sepeda pada hari libur lebih rendah dibandingkan hari biasa.
 
@@ -223,11 +232,11 @@ Pada rentang jam 06.00–21.00, jumlah penyewaan pada hari libur rata-rata **47,
 
 ---
 
-# 🔍 Analisis Lanjutan
+## 🔍 Analisis Lanjutan
 
 Selain menjawab pertanyaan bisnis utama, dilakukan beberapa analisis tambahan untuk mendapatkan pemahaman yang lebih mendalam mengenai pola penyewaan sepeda.
 
-## 1. Rata-rata Penyewaan Berdasarkan Hari
+### 1. Rata-rata Penyewaan Berdasarkan Hari
 
 Rata-rata penyewaan berdasarkan hari dalam minggu:
 
@@ -241,13 +250,15 @@ Rata-rata penyewaan berdasarkan hari dalam minggu:
 | Jumat | 4.690,28 |
 | Sabtu | 4.550,54 |
 
-### 💡 Insight
+![Rata-rata Penyewaan Sepeda Berdasarkan Hari](visualisasi/berdasarkanhari.png)
+
+#### 💡 Insight
 
 Jumlah penyewaan sepeda relatif **stabil sepanjang hari dalam seminggu**, tetapi terdapat sedikit perbedaan antarhari.
 
 Rata-rata penyewaan tertinggi terdapat pada **hari Jumat**, yaitu sebesar **4.690,28 penyewaan**, sedangkan rata-rata terendah terdapat pada **hari Minggu**, yaitu sebesar **4.228,82 penyewaan**.
 
-### 🎯 Action Item
+#### 🎯 Action Item
 
 - Meningkatkan kesiapan armada menjelang akhir minggu, terutama pada **hari Jumat**.
 - Memanfaatkan tingginya aktivitas penyewaan pada Jumat untuk menjalankan program promosi atau membership.
@@ -255,7 +266,7 @@ Rata-rata penyewaan tertinggi terdapat pada **hari Jumat**, yaitu sebesar **4.69
 
 ---
 
-## 2. Rata-rata Penyewaan Berdasarkan Jam
+### 2. Rata-rata Penyewaan Berdasarkan Jam
 
 Pola penyewaan berdasarkan jam menunjukkan adanya periode dengan tingkat permintaan yang berbeda-beda.
 
@@ -286,7 +297,9 @@ Pola penyewaan berdasarkan jam menunjukkan adanya periode dengan tingkat permint
 | 22.00 | 131,34 |
 | 23.00 | 87,83 |
 
-### 💡 Insight
+![Rata-rata Penyewaan Sepeda Berdasarkan Jam](visualisasi/berdasarkanjam023.png)
+
+#### 💡 Insight
 
 Terdapat pola yang jelas pada penggunaan sepeda berdasarkan waktu.
 
@@ -297,7 +310,7 @@ Terdapat pola yang jelas pada penggunaan sepeda berdasarkan waktu.
 
 Pola ini memperkuat temuan pada analisis rush hour bahwa **jam berangkat dan pulang kerja merupakan periode dengan permintaan tertinggi.**
 
-### 🎯 Action Item
+#### 🎯 Action Item
 
 - Memastikan ketersediaan sepeda dan kapasitas stasiun pada pukul **07.00–09.00 dan 16.00–19.00**.
 - Menempatkan lebih banyak armada pada area yang berpotensi menjadi titik keberangkatan dan tujuan pengguna pada jam sibuk.
@@ -306,7 +319,7 @@ Pola ini memperkuat temuan pada analisis rush hour bahwa **jam berangkat dan pul
 
 ---
 
-## 3. Hubungan Feels-Like Temperature dengan Penyewaan
+### 3. Hubungan Feels-Like Temperature dengan Penyewaan
 
 Suhu feels-like dikategorikan menjadi:
 
@@ -326,13 +339,15 @@ Hasil analisis:
 | Ideal | 183,98 |
 | Panas | 263,70 |
 
-### 💡 Insight
+![Rata-rata Penyewaan Sepeda Berdasarkan Suhu Feels-Like](visualisasi/berdasarkanbinningsuhufeelslike.png)
+
+#### 💡 Insight
 
 Rata-rata penyewaan meningkat seiring dengan meningkatnya suhu feels-like pada dataset.
 
 Kategori **Panas** memiliki rata-rata penyewaan tertinggi sebesar **263,70**, sedangkan kategori **Sangat Dingin** memiliki rata-rata terendah sebesar **84,29**.
 
-### 🎯 Action Item
+#### 🎯 Action Item
 
 - Meningkatkan kesiapan armada ketika kondisi suhu lebih hangat karena permintaan cenderung lebih tinggi.
 - Memanfaatkan periode dengan suhu hangat sebagai momentum untuk menjalankan promosi atau kampanye penyewaan.
@@ -340,7 +355,7 @@ Kategori **Panas** memiliki rata-rata penyewaan tertinggi sebesar **263,70**, se
 
 ---
 
-## 4. Hubungan Kelembapan dengan Penyewaan
+### 4. Hubungan Kelembapan dengan Penyewaan
 
 Kelembapan dikategorikan menjadi:
 
@@ -358,7 +373,9 @@ Hasil analisis:
 | Sedang | 221,75 |
 | Tinggi | 145,18 |
 
-### 💡 Insight
+![Rata-rata Penyewaan Sepeda Berdasarkan Kelembapan](visualisasi/berdasarkanbinningkelembapan.png)
+
+#### 💡 Insight
 
 Rata-rata penyewaan sepeda lebih tinggi ketika tingkat kelembapan berada pada kategori **Rendah**.
 
@@ -366,7 +383,7 @@ Sebaliknya, ketika kelembapan tinggi, rata-rata penyewaan menurun hingga **145,1
 
 Hal ini menunjukkan adanya hubungan antara kondisi kelembapan dengan tingkat penggunaan sepeda.
 
-### 🎯 Action Item
+#### 🎯 Action Item
 
 - Mengantisipasi penurunan permintaan ketika kelembapan tinggi dengan menggunakan strategi promosi yang sesuai.
 - Mengoptimalkan ketersediaan armada pada kondisi kelembapan rendah ketika permintaan cenderung lebih tinggi.
@@ -374,7 +391,7 @@ Hal ini menunjukkan adanya hubungan antara kondisi kelembapan dengan tingkat pen
 
 ---
 
-## 5. Hubungan Kecepatan Angin dengan Penyewaan
+### 5. Hubungan Kecepatan Angin dengan Penyewaan
 
 Kecepatan angin dikategorikan menjadi:
 
@@ -394,7 +411,9 @@ Hasil analisis:
 | Gale | 140,88 |
 | Storm | Tidak tersedia |
 
-### 💡 Insight
+![Rata-rata Penyewaan Sepeda Berdasarkan Kecepatan Angin](visualisasi/berdasarkanbinningkecepatanangin.png)
+
+#### 💡 Insight
 
 Rata-rata penyewaan tertinggi terdapat pada kategori **Breeze**, yaitu sebesar **193,62 penyewaan**.
 
@@ -402,7 +421,7 @@ Pada kategori **Gale**, rata-rata penyewaan menurun menjadi **140,88 penyewaan**
 
 Tidak terdapat observasi pada kategori **Storm**, sehingga tidak dapat dilakukan perbandingan untuk kategori tersebut.
 
-### 🎯 Action Item
+#### 🎯 Action Item
 
 - Mempertimbangkan kecepatan angin sebagai salah satu faktor dalam perencanaan operasional.
 - Memanfaatkan kondisi angin yang relatif nyaman untuk mendorong aktivitas penyewaan.
@@ -411,7 +430,7 @@ Tidak terdapat observasi pada kategori **Storm**, sehingga tidak dapat dilakukan
 
 ---
 
-## 6. Perbandingan Pengguna Casual dan Registered Berdasarkan Hari Kerja
+### 6. Perbandingan Pengguna Casual dan Registered Berdasarkan Hari Kerja
 
 Rata-rata pengguna berdasarkan `workingday`:
 
@@ -420,7 +439,9 @@ Rata-rata pengguna berdasarkan `workingday`:
 | Hari libur/weekend | 1.371,13 | 2.959,03 |
 | Hari kerja | 606,57 | 3.978,25 |
 
-### 💡 Insight
+![Rata-rata Penyewaan Sepeda Casual dan Registered Berdasarkan Hari Kerja ](visualisasi/berdasarkancasualregisteredworkingday.png)
+
+#### 💡 Insight
 
 Terdapat pola yang berbeda antara pengguna **casual** dan **registered**.
 
@@ -431,7 +452,7 @@ Hal ini menunjukkan bahwa kedua segmen pengguna memiliki pola penggunaan yang be
 
 Pengguna registered cenderung lebih aktif pada hari kerja, sedangkan pengguna casual memiliki aktivitas yang relatif lebih tinggi pada hari libur/weekend.
 
-### 🎯 Action Item
+#### 🎯 Action Item
 
 - Menargetkan pengguna **registered** dengan program membership, subscription, atau benefit perjalanan pada hari kerja.
 - Menargetkan pengguna **casual** dengan promosi rekreasi dan paket weekend.
@@ -440,7 +461,7 @@ Pengguna registered cenderung lebih aktif pada hari kerja, sedangkan pengguna ca
 
 ---
 
-# 📌 Kesimpulan
+## 📌 Kesimpulan
 
 Berdasarkan hasil analisis, dapat diperoleh beberapa kesimpulan utama:
 
@@ -464,7 +485,7 @@ Dengan demikian, terdapat selisih sebesar **47,46 penyewaan**, atau penurunan se
 
 ---
 
-# 💡 Rekomendasi Action Item
+## 💡 Rekomendasi Action Item
 
 Berdasarkan seluruh hasil analisis, beberapa rekomendasi yang dapat diberikan adalah:
 
@@ -506,7 +527,7 @@ Berdasarkan seluruh hasil analisis, beberapa rekomendasi yang dapat diberikan ad
 
 ---
 
-# 🖥️ Dashboard
+## 🖥️ Dashboard
 
 Hasil analisis data divisualisasikan menggunakan **Streamlit** dan dapat digunakan untuk mengeksplorasi pola penyewaan sepeda berdasarkan waktu, kondisi cuaca, hari, serta faktor lingkungan.
 
@@ -516,29 +537,29 @@ Hasil analisis data divisualisasikan menggunakan **Streamlit** dan dapat digunak
 
 ---
 
-# ⚙️ Instalasi dan Menjalankan Dashboard
+## ⚙️ Instalasi dan Menjalankan Dashboard
 
-## 1. Clone Repository
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/valselt/proyekanalisisdata_dicoding.git
 cd proyekanalisisdata_dicoding
 ```
 
-## 2. Setup Environment - Anaconda
+### 2. Setup Environment - Anaconda
 
 ```bash
 conda create --name analisis-data-sepeda python=3.9
 conda activate analisis-data-sepeda
 ```
 
-## 3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 4. Run Streamlit App
+### 4. Run Streamlit App
 
 ```bash
 streamlit run dashboard.py
@@ -549,7 +570,19 @@ Setelah dijalankan, dashboard dapat diakses melalui alamat yang ditampilkan oleh
 ---
 
 
-# 🛠️ Tools & Technologies
+#### 📌 Daftar Isi
+- [📌 Deskripsi Proyek](#-deskripsi-proyek)
+- [🎯 Pertanyaan Bisnis](#-pertanyaan-bisnis)
+- [📊 Dataset](#-dataset)
+- [🛢 Data Wrangling](#-data-wrangling)
+- [📈 Exploratory Data Analysis](#-exploratory-data-analysis)
+- [🔍 Analisis Lanjutan](#-analisis-lanjutan)
+- [📌 Kesimpulan](#-kesimpulan)
+- [💡 Rekomendasi Action Item](#-rekomendasi-action-item)
+- [🖥️ Dashboard](#%EF%B8%8F-dashboard)
+- [⚙️ Instalasi dan Menjalankan Dashboard](#%EF%B8%8F-instalasi-dan-menjalankan-dashboard)
+- [🛠️ Tools & Technologies](#%EF%B8%8F-tools--technologies)
+- [👤 Author](#-author) 🛠️ Tools & Technologies
 
 - **Python**
 - **Pandas**
