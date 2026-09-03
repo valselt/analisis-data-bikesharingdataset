@@ -1,6 +1,7 @@
 # Dashboard Analisis Data Penyewaan Sepeda 🚲
 
 ## 📌 Daftar Isi
+
 - [📌 Deskripsi Proyek](#-deskripsi-proyek)
 - [🎯 Pertanyaan Bisnis](#-pertanyaan-bisnis)
 - [📊 Dataset](#-dataset)
@@ -37,12 +38,15 @@ Hasil analisis kemudian divisualisasikan dalam bentuk **dashboard interaktif men
 Analisis ini dilakukan untuk menjawab beberapa pertanyaan bisnis berikut:
 
 ### Pertanyaan 1
+
 **Berapa besar persentase peningkatan rata-rata jumlah penyewaan sepeda (`cnt`) pada jam sibuk/rush hour pagi (07.00–09.00) dan sore (16.00–18.00) dibandingkan jam-jam lainnya pada hari kerja (`workingday = 1`) sepanjang tahun 2012?**
 
 ### Pertanyaan 2
+
 **Kondisi cuaca mana (`weathersit`: Level 1 Cerah, Level 2 Berawan, atau Level 3/4 Badai) yang menghasilkan rata-rata jumlah penyewaan sepeda (`cnt`) harian tertinggi sepanjang tahun 2012?**
 
 ### Pertanyaan 3
+
 **Berapa selisih rata-rata jumlah penyewaan sepeda (`cnt`) antara hari libur (`holiday`) dan hari biasa pada rentang jam 06.00–21.00 sepanjang tahun 2011 dan 2012?**
 
 ---
@@ -62,29 +66,27 @@ Dataset terdiri dari dua file utama:
 - `hour.csv` — data penyewaan sepeda yang diagregasi berdasarkan jam, dengan **17.379 records**
 - `day.csv` — data penyewaan sepeda yang diagregasi berdasarkan hari, dengan **731 records**
 
-
-
 ### Variabel Dataset
 
-| Kolom | Deskripsi |
-|---|---|
-| `instant` | Record index |
-| `dteday` | Tanggal |
-| `season` | Musim (1: Spring, 2: Summer, 3: Fall, 4: Winter) |
-| `yr` | Tahun (0: 2011, 1: 2012) |
-| `mnth` | Bulan (1–12) |
-| `hr` | Jam (0–23), hanya tersedia pada `hour.csv` |
-| `holiday` | Indikator hari libur |
-| `weekday` | Hari dalam minggu |
-| `workingday` | Indikator hari kerja |
-| `weathersit` | Kondisi cuaca |
-| `temp` | Suhu yang telah dinormalisasi |
-| `atemp` | Feels-like temperature yang telah dinormalisasi |
-| `hum` | Kelembapan yang telah dinormalisasi |
-| `windspeed` | Kecepatan angin yang telah dinormalisasi |
-| `casual` | Jumlah pengguna casual |
-| `registered` | Jumlah pengguna registered |
-| `cnt` | Total penyewaan sepeda |
+| Kolom        | Deskripsi                                        |
+| ------------ | ------------------------------------------------ |
+| `instant`    | Record index                                     |
+| `dteday`     | Tanggal                                          |
+| `season`     | Musim (1: Spring, 2: Summer, 3: Fall, 4: Winter) |
+| `yr`         | Tahun (0: 2011, 1: 2012)                         |
+| `mnth`       | Bulan (1–12)                                     |
+| `hr`         | Jam (0–23), hanya tersedia pada `hour.csv`       |
+| `holiday`    | Indikator hari libur                             |
+| `weekday`    | Hari dalam minggu                                |
+| `workingday` | Indikator hari kerja                             |
+| `weathersit` | Kondisi cuaca                                    |
+| `temp`       | Suhu yang telah dinormalisasi                    |
+| `atemp`      | Feels-like temperature yang telah dinormalisasi  |
+| `hum`        | Kelembapan yang telah dinormalisasi              |
+| `windspeed`  | Kecepatan angin yang telah dinormalisasi         |
+| `casual`     | Jumlah pengguna casual                           |
+| `registered` | Jumlah pengguna registered                       |
+| `cnt`        | Total penyewaan sepeda                           |
 
 ### Kategori Cuaca
 
@@ -103,8 +105,8 @@ Dataset ini dikembangkan oleh **Hadi Fanaee-T dan Joao Gama**.
 
 **DOI:** 10.1007/s13748-013-0040-3
 
-
 ---
+
 ## 🛢 Data Wrangling
 
 ### 🔎 Data Assessment
@@ -163,10 +165,10 @@ Analisis pertama dilakukan menggunakan `hour_df` dengan memfilter:
 
 Hasil analisis:
 
-| Periode | Rata-rata Penyewaan |
-|---|---:|
-| Jam lainnya | 159,26 |
-| Rush Hour | 486,48 |
+| Periode     | Rata-rata Penyewaan |
+| ----------- | ------------------: |
+| Jam lainnya |              159,26 |
+| Rush Hour   |              486,48 |
 
 Peningkatan rata-rata:
 
@@ -187,11 +189,11 @@ Hal ini menunjukkan adanya **lonjakan permintaan yang sangat signifikan pada per
 Analisis kedua dilakukan untuk membandingkan rata-rata jumlah penyewaan berdasarkan kondisi cuaca pada tahun 2012.
 
 | Kondisi Cuaca | Rata-rata Penyewaan |
-|---|---:|
-| Cerah | 253,66 |
-| Berawan | 212,99 |
-| Badai Ringan | 142,37 |
-| Badai Berat | 93,50 |
+| ------------- | ------------------: |
+| Cerah         |              253,66 |
+| Berawan       |              212,99 |
+| Badai Ringan  |              142,37 |
+| Badai Berat   |               93,50 |
 
 ![Rata-rata Penyewaan Sepeda Berdasarkan Kondisi Cuaca Tahun 2012](visualisasi/pertanyaan2.png)
 
@@ -210,9 +212,9 @@ Hal ini menunjukkan bahwa **kondisi cuaca merupakan salah satu faktor yang berka
 Analisis ketiga dilakukan pada rentang waktu **06.00–21.00** sepanjang tahun 2011 dan 2012.
 
 | Jenis Hari | Rata-rata Penyewaan |
-|---|---:|
-| Hari biasa | 261,23 |
-| Hari libur | 213,76 |
+| ---------- | ------------------: |
+| Hari biasa |              261,23 |
+| Hari libur |              213,76 |
 
 Selisih rata-rata:
 
@@ -240,15 +242,15 @@ Selain menjawab pertanyaan bisnis utama, dilakukan beberapa analisis tambahan un
 
 Rata-rata penyewaan berdasarkan hari dalam minggu:
 
-| Hari | Rata-rata Penyewaan |
-|---|---:|
-| Minggu | 4.228,82 |
-| Senin | 4.338,12 |
-| Selasa | 4.510,66 |
-| Rabu | 4.548,53 |
-| Kamis | 4.667,25 |
-| Jumat | 4.690,28 |
-| Sabtu | 4.550,54 |
+| Hari   | Rata-rata Penyewaan |
+| ------ | ------------------: |
+| Minggu |            4.228,82 |
+| Senin  |            4.338,12 |
+| Selasa |            4.510,66 |
+| Rabu   |            4.548,53 |
+| Kamis  |            4.667,25 |
+| Jumat  |            4.690,28 |
+| Sabtu  |            4.550,54 |
 
 ![Rata-rata Penyewaan Sepeda Berdasarkan Hari](visualisasi/berdasarkanhari.png)
 
@@ -270,32 +272,32 @@ Rata-rata penyewaan tertinggi terdapat pada **hari Jumat**, yaitu sebesar **4.69
 
 Pola penyewaan berdasarkan jam menunjukkan adanya periode dengan tingkat permintaan yang berbeda-beda.
 
-| Jam | Rata-rata |
-|---|---:|
-| 00.00 | 53,90 |
-| 01.00 | 33,38 |
-| 02.00 | 22,87 |
-| 03.00 | 11,73 |
-| 04.00 | 6,35 |
-| 05.00 | 19,89 |
-| 06.00 | 76,04 |
-| 07.00 | 212,06 |
-| 08.00 | 359,01 |
-| 09.00 | 219,31 |
-| 10.00 | 173,67 |
-| 11.00 | 208,14 |
-| 12.00 | 253,32 |
-| 13.00 | 253,66 |
-| 14.00 | 240,95 |
-| 15.00 | 251,23 |
-| 16.00 | 311,98 |
-| 17.00 | 461,45 |
-| 18.00 | 425,51 |
-| 19.00 | 311,52 |
-| 20.00 | 226,03 |
-| 21.00 | 172,31 |
-| 22.00 | 131,34 |
-| 23.00 | 87,83 |
+| Jam   | Rata-rata |
+| ----- | --------: |
+| 00.00 |     53,90 |
+| 01.00 |     33,38 |
+| 02.00 |     22,87 |
+| 03.00 |     11,73 |
+| 04.00 |      6,35 |
+| 05.00 |     19,89 |
+| 06.00 |     76,04 |
+| 07.00 |    212,06 |
+| 08.00 |    359,01 |
+| 09.00 |    219,31 |
+| 10.00 |    173,67 |
+| 11.00 |    208,14 |
+| 12.00 |    253,32 |
+| 13.00 |    253,66 |
+| 14.00 |    240,95 |
+| 15.00 |    251,23 |
+| 16.00 |    311,98 |
+| 17.00 |    461,45 |
+| 18.00 |    425,51 |
+| 19.00 |    311,52 |
+| 20.00 |    226,03 |
+| 21.00 |    172,31 |
+| 22.00 |    131,34 |
+| 23.00 |     87,83 |
 
 ![Rata-rata Penyewaan Sepeda Berdasarkan Jam](visualisasi/berdasarkanjam023.png)
 
@@ -323,21 +325,21 @@ Pola ini memperkuat temuan pada analisis rush hour bahwa **jam berangkat dan pul
 
 Suhu feels-like dikategorikan menjadi:
 
-| Kategori | Rentang |
-|---|---|
-| Sangat Dingin | 0–15°C |
-| Sejuk | 15–20°C |
-| Ideal | 20–27°C |
-| Panas | >27°C |
+| Kategori      | Rentang |
+| ------------- | ------- |
+| Sangat Dingin | 0–15°C  |
+| Sejuk         | 15–20°C |
+| Ideal         | 20–27°C |
+| Panas         | >27°C   |
 
 Hasil analisis:
 
-| Kategori | Rata-rata Penyewaan |
-|---|---:|
-| Sangat Dingin | 84,29 |
-| Sejuk | 137,97 |
-| Ideal | 183,98 |
-| Panas | 263,70 |
+| Kategori      | Rata-rata Penyewaan |
+| ------------- | ------------------: |
+| Sangat Dingin |               84,29 |
+| Sejuk         |              137,97 |
+| Ideal         |              183,98 |
+| Panas         |              263,70 |
 
 ![Rata-rata Penyewaan Sepeda Berdasarkan Suhu Feels-Like](visualisasi/berdasarkanbinningsuhufeelslike.png)
 
@@ -360,18 +362,18 @@ Kategori **Panas** memiliki rata-rata penyewaan tertinggi sebesar **263,70**, se
 Kelembapan dikategorikan menjadi:
 
 | Kategori | Rentang |
-|---|---|
-| Rendah | 0–40% |
-| Sedang | 40–60% |
-| Tinggi | >60% |
+| -------- | ------- |
+| Rendah   | 0–40%   |
+| Sedang   | 40–60%  |
+| Tinggi   | >60%    |
 
 Hasil analisis:
 
 | Kategori | Rata-rata Penyewaan |
-|---|---:|
-| Rendah | 285,72 |
-| Sedang | 221,75 |
-| Tinggi | 145,18 |
+| -------- | ------------------: |
+| Rendah   |              285,72 |
+| Sedang   |              221,75 |
+| Tinggi   |              145,18 |
 
 ![Rata-rata Penyewaan Sepeda Berdasarkan Kelembapan](visualisasi/berdasarkanbinningkelembapan.png)
 
@@ -395,21 +397,21 @@ Hal ini menunjukkan adanya hubungan antara kondisi kelembapan dengan tingkat pen
 
 Kecepatan angin dikategorikan menjadi:
 
-| Kategori | Rentang |
-|---|---|
-| Light | 0–5 km/jam |
-| Breeze | 5–49 km/jam |
-| Gale | 49–88 km/jam |
-| Storm | >88 km/jam |
+| Kategori | Rentang      |
+| -------- | ------------ |
+| Light    | 0–5 km/jam   |
+| Breeze   | 5–49 km/jam  |
+| Gale     | 49–88 km/jam |
+| Storm    | >88 km/jam   |
 
 Hasil analisis:
 
 | Kategori | Rata-rata Penyewaan |
-|---|---:|
-| Light | 160,64 |
-| Breeze | 193,62 |
-| Gale | 140,88 |
-| Storm | Tidak tersedia |
+| -------- | ------------------: |
+| Light    |              160,64 |
+| Breeze   |              193,62 |
+| Gale     |              140,88 |
+| Storm    |      Tidak tersedia |
 
 ![Rata-rata Penyewaan Sepeda Berdasarkan Kecepatan Angin](visualisasi/berdasarkanbinningkecepatanangin.png)
 
@@ -434,10 +436,10 @@ Tidak terdapat observasi pada kategori **Storm**, sehingga tidak dapat dilakukan
 
 Rata-rata pengguna berdasarkan `workingday`:
 
-| Hari | Casual | Registered |
-|---|---:|---:|
-| Hari libur/weekend | 1.371,13 | 2.959,03 |
-| Hari kerja | 606,57 | 3.978,25 |
+| Hari               |   Casual | Registered |
+| ------------------ | -------: | ---------: |
+| Hari libur/weekend | 1.371,13 |   2.959,03 |
+| Hari kerja         |   606,57 |   3.978,25 |
 
 ![Rata-rata Penyewaan Sepeda Casual dan Registered Berdasarkan Hari Kerja ](visualisasi/berdasarkancasualregisteredworkingday.png)
 
@@ -565,32 +567,6 @@ pip install -r requirements.txt
 streamlit run dashboard.py
 ```
 
-Setelah dijalankan, dashboard dapat diakses melalui alamat yang ditampilkan oleh Streamlit.
-
----
-
-
-#### 📌 Daftar Isi
-- [📌 Deskripsi Proyek](#-deskripsi-proyek)
-- [🎯 Pertanyaan Bisnis](#-pertanyaan-bisnis)
-- [📊 Dataset](#-dataset)
-- [🛢 Data Wrangling](#-data-wrangling)
-- [📈 Exploratory Data Analysis](#-exploratory-data-analysis)
-- [🔍 Analisis Lanjutan](#-analisis-lanjutan)
-- [📌 Kesimpulan](#-kesimpulan)
-- [💡 Rekomendasi Action Item](#-rekomendasi-action-item)
-- [🖥️ Dashboard](#%EF%B8%8F-dashboard)
-- [⚙️ Instalasi dan Menjalankan Dashboard](#%EF%B8%8F-instalasi-dan-menjalankan-dashboard)
-- [🛠️ Tools & Technologies](#%EF%B8%8F-tools--technologies)
-- [👤 Author](#-author) 🛠️ Tools & Technologies
-
-- **Python**
-- **Pandas**
-- **NumPy**
-- **Matplotlib**
-- **Seaborn**
-- **Streamlit**
-- **Jupyter Notebook**
-- **Anaconda**
+Setelah dijalankan, dashboard dapat diakses melalui alamat yang ditampilkan di Streamlit.
 
 ---
