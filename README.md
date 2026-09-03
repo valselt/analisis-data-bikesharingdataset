@@ -73,7 +73,17 @@ Dataset terdiri dari dua file utama:
 - **Level 3 — Badai Ringan:** Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
 - **Level 4 — Badai Berat:** Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog
 
+### 📚 Dataset Reference
+
+Dataset ini dikembangkan oleh **Hadi Fanaee-T dan Joao Gama**.
+
+> Fanaee-T, Hadi, and Gama, Joao. "Event labeling combining ensemble detectors and background knowledge." Progress in Artificial Intelligence (2013): 1–15. Springer Berlin Heidelberg.
+
+**DOI:** 10.1007/s13748-013-0040-3
+
+
 ---
+# 🛢 Data Wrangling
 
 ## 🔎 Data Assessment
 
@@ -519,15 +529,6 @@ Setelah dijalankan, dashboard dapat diakses melalui alamat yang ditampilkan oleh
 
 ---
 
-# 📚 Dataset Reference
-
-Dataset ini dikembangkan oleh **Hadi Fanaee-T dan Joao Gama**.
-
-> Fanaee-T, Hadi, and Gama, Joao. "Event labeling combining ensemble detectors and background knowledge." Progress in Artificial Intelligence (2013): 1–15. Springer Berlin Heidelberg.
-
-**DOI:** 10.1007/s13748-013-0040-3
-
----
 
 # 🛠️ Tools & Technologies
 
