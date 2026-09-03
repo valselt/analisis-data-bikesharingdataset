@@ -1,6 +1,20 @@
 # Dashboard Analisis Data Penyewaan Sepeda 🚲
 
-## 📌 Deskripsi Proyek
+# 📌 Daftar Isi
+- [📌 Deskripsi Proyek](#-deskripsi-proyek)
+- [🎯 Pertanyaan Bisnis](#-pertanyaan-bisnis)
+- [📊 Dataset](#-dataset)
+- [🛢 Data Wrangling](#-data-wrangling)
+- [📈 Exploratory Data Analysis](#-exploratory-data-analysis)
+- [🔍 Analisis Lanjutan](#-analisis-lanjutan)
+- [📌 Kesimpulan](#-kesimpulan)
+- [💡 Rekomendasi Action Item](#-rekomendasi-action-item)
+- [🖥️ Dashboard](#%EF%B8%8F-dashboard)
+- [⚙️ Instalasi dan Menjalankan Dashboard](#%EF%B8%8F-instalasi-dan-menjalankan-dashboard)
+- [🛠️ Tools & Technologies](#%EF%B8%8F-tools--technologies)
+- [👤 Author](#-author)
+
+# 📌 Deskripsi Proyek
 
 Proyek ini merupakan analisis data terhadap **Bike Sharing Dataset**, yaitu dataset yang berisi informasi mengenai jumlah penyewaan sepeda berdasarkan waktu, kondisi cuaca, hari kerja, hari libur, serta karakteristik pengguna.
 
@@ -10,7 +24,7 @@ Hasil analisis kemudian divisualisasikan dalam bentuk **dashboard interaktif men
 
 ---
 
-## 🎯 Pertanyaan Bisnis
+# 🎯 Pertanyaan Bisnis
 
 Analisis ini dilakukan untuk menjawab beberapa pertanyaan bisnis berikut:
 
@@ -25,7 +39,7 @@ Analisis ini dilakukan untuk menjawab beberapa pertanyaan bisnis berikut:
 
 ---
 
-## 📊 Dataset
+# 📊 Dataset
 
 Dataset yang digunakan adalah **Bike Sharing Dataset** dari:
 
@@ -42,7 +56,7 @@ Dataset terdiri dari dua file utama:
 
 
 
-### Variabel Dataset
+## Variabel Dataset
 
 | Kolom | Deskripsi |
 |---|---|
@@ -64,7 +78,7 @@ Dataset terdiri dari dua file utama:
 | `registered` | Jumlah pengguna registered |
 | `cnt` | Total penyewaan sepeda |
 
-### Kategori Cuaca
+## Kategori Cuaca
 
 `weathersit` terdiri dari:
 
@@ -73,7 +87,7 @@ Dataset terdiri dari dua file utama:
 - **Level 3 — Badai Ringan:** Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
 - **Level 4 — Badai Berat:** Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog
 
-### 📚 Dataset Reference
+## 📚 Dataset Reference
 
 Dataset ini dikembangkan oleh **Hadi Fanaee-T dan Joao Gama**.
 
