@@ -150,7 +150,7 @@ Peningkatan rata-rata:
 
 **327,22 penyewaan atau sekitar 205,46%.**
 
-![Perbandingan Rata-rata Peminjaman Sepeda Tahun 2012](visualisasi\pertanyaan1.png)
+![Perbandingan Rata-rata Peminjaman Sepeda Tahun 2012](visualisasi/pertanyaan1.png)
 
 ### 💡 Insight
 
@@ -171,7 +171,7 @@ Analisis kedua dilakukan untuk membandingkan rata-rata jumlah penyewaan berdasar
 | Badai Ringan | 142,37 |
 | Badai Berat | 93,50 |
 
-![Rata-rata Peminjaman Sepeda Berdasarkan Kondisi Cuaca Tahun 2012](visualisasi\pertanyaan2.png)
+![Rata-rata Peminjaman Sepeda Berdasarkan Kondisi Cuaca Tahun 2012](visualisasi/pertanyaan2.png)
 
 ### 💡 Insight
 
@@ -200,7 +200,7 @@ Persentase penurunan pada hari libur:
 
 **18,17%.**
 
-![Perbandingan Rata-rata Penyewaan Sepeda: Hari Libur vs Hari Biasa (Jam 06.00-21.00)](visualisasi\pertanyaan3.png)
+![Perbandingan Rata-rata Penyewaan Sepeda: Hari Libur vs Hari Biasa (Jam 06.00-21.00)](visualisasi/pertanyaan3.png)
 
 ### 💡 Insight
 
