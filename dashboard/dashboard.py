@@ -107,7 +107,7 @@ min_date = day_df['dteday'].min()
 max_date = day_df['dteday'].max()
 
 with st.sidebar:
-    st.image("https://raw.githubusercontent.com/valselt/proyekanalisisdata_dicoding/main/rentabike-logo_convert.jpg")
+    st.image("https://raw.githubusercontent.com/valselt/analisis-data-bikesharingdataset/main/rentabike-logo_convert.jpg")
     start_date, end_date = st.date_input(
         label='Rentang Waktu',
         min_value=min_date,
